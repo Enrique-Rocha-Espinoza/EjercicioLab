@@ -1,27 +1,31 @@
 
 def captura():
     a=str(input("inserte el nombre del trabajador: "))
-    b=int(input(f"cuanto gana por hora {a}"))
-    c=int(input(f"cuantas horas trabajo {a}"))
+    c=int(input(f"cuanto gana por hora {a}: "))
+    b=int(input(f"cuantas horas trabajo {a}: "))
+
+    
 
     return a,b,c
 
 
 if __name__ == "__main__":
-    trabajadores=int(input("ucnatos trabajadores son:"))
+    trabajadores=int(input("Cuantos trabajadores son: "))
     i= 0
     lista= []
     while(i<trabajadores):
         
         a,b,c= captura()
-        print(f"{a} {b} {c}")
+        c = c*b
+
         lista.append(a)
         lista.append(b)
         lista.append(c)
         i+=1
-        
 
-        hkjkjii
-    
-    for x in range(0, len(lista), 2):
-        print(x)
+
+    print("\nNombre del trabajador\tHoras trabajadas\tSueldo")
+    print("-" * 80)
+    for i in range(0, len(lista), 3):
+        print(f"{lista[i]:20}\t{lista[i + 1]:<16}\t{lista[i + 2]:<10}")
+   
