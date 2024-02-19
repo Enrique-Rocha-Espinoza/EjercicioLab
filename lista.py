@@ -19,6 +19,9 @@ if __name__ == "__main__":
         lista.append(b)
         lista.append(c)
         i+=1
+        
+
+        hkjkjii
     
     for x in range(0, len(lista), 2):
         print(x)
