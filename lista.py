@@ -24,8 +24,8 @@ if __name__ == "__main__":
         i+=1
 
 
-    print("\nNombre del trabajador\tHoras trabajadas\tSueldo")
+    print("\nNombre del trabajador\tSueldo")
     print("-" * 80)
     for i in range(0, len(lista), 3):
-        print(f"{lista[i]:20}\t{lista[i + 1]:<16}\t{lista[i + 2]:<10}")
+        print(f"{lista[i]:20}\t{lista[i + 2]:<10}")
    
