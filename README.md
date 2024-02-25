@@ -191,3 +191,77 @@ while contador <= 5:
 ```
 
 En este ejemplo, la variable `contador` se inicializa en 1. Mientras `contador` sea menor o igual a 5, el bucle `while` imprimirá el valor de `contador` y luego incrementará `contador` en 1. Cuando `contador` sea mayor que 5, la condición `contador <= 5` se evaluará como falsa, y el bucle terminará.
+
+
+## problema 1
+Escribir un programa que lea un entero positivo “n” introducido por el usuario y después muestreen pantalla la suma de todos los enteros desde 1 hasta n . La suma de los primeros enterospositivos puede ser calculada de la siguiente forma: 
+
+suma = (n(n + 1))/2
+
+El codigo para resolver este problema es el siguiente:
+```python
+n= int(input("inserte el numero"))
+
+
+a= (n(n+1))/2
+print(f"\n la suma es: {a}")
+```
+Este consiste en que en la primera linea le pedimos al usuario ingresar un numero para que se haga la suma, este al ser resiviudo por un iunput se debe de trasformar a un netero int, y este valor se le asigna a n, despues colocamos la formula administrada en el problema y el resultado de esta que sea asiciada a una variable a, por ultimo solo se imprime esta varoiable a para mostrar el resultado.
+
+
+## problema 2
+
+Escribir un programa que pregunte al usuario por el número de horas trabajadas y el costo por hora, Después debe mostrar por pantalla la paga que le corresponde.
+
+El codigo que resulve este problema es el siguyiente:
+
+```python
+a, b= map(int,input("inserte las horas y el costo: ").split())
+
+print(f"pago : {a*b}")
+```
+En la primera linea le pedimos al usuario que ingrese las horas trabajadas y el costo por hora, despues mapeamos estos 2 valores enteros a las variables a y b, por ultimo para mostrar la paga que le coprresponde imnporimimos la multiplicacion de a*b para opbtener el pago correspondiente.
+
+## problema 3
+
+Crea una lista de nombre + sueldo por hora + horas trabajadas de al menos seis operadores.Imprime el nombre y el sueldo a pagar de cada operador.
+
+El codigo que resulve este problema es el siguiente:
+
+
+```python
+def captura():
+    a=str(input("inserte el nombre del trabajador: "))
+    c=int(input(f"cuanto gana por hora {a}: "))
+    b=int(input(f"cuantas horas trabajo {a}: "))
+
+    
+
+    return a,b,c
+
+
+if __name__ == "__main__":
+    trabajadores=int(input("Cuantos trabajadores son: "))
+    i= 0
+    lista= []
+    while(i<trabajadores):
+        
+        a,b,c= captura()
+        c = c*b
+
+        lista.append(a)
+        lista.append(b)
+        lista.append(c)
+        i+=1
+
+
+    print("\nNombre del trabajador\tSueldo")
+    print("-" * 80)
+    for i in range(0, len(lista), 3):
+        print(f"{lista[i]:20}\t{lista[i + 2]:<10}")
+```
+
+En la fucion ` capturar()` se capturan los dataos que se van a utilizar para poder trabajar con ellos, en primer lugar se pide el nombre del trabajador, despues cuento gana este por hora y por ultimo cuyantas horas trabajo, estos valores se asignan a las variables a, b y c.
+
+En la funcion main primero le preguntamos al usuario cuantos trabajadoreres va a ingresar, despues creamos nuestra lista vacia la cual vamos a ir rellenando con los valores a,b y c, en el while se coloco como condiucion que se repoitiera las veces que fueran nesesariuas hasta que alcanze el numero de trabajadores ingresados, detro de este se llama a la funcion ` capturar()` y despues de obtener los valores modificaremos el valor de c para que este sea ahora c*b para que obtengamos cuanto se le debe pagar a cada trabajador.
+
