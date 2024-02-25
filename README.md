@@ -82,3 +82,35 @@ Ahora, `mi_lista` sería `[1, 2, 3, 4, 5, 6]`.
 - `lista.extend(lista2)`: Añade los elementos de `lista2` al final de `lista`.
 - `lista.remove(elemento)`: Elimina la primera ocurrencia de `elemento` en la lista.
 - `round(number, digits)`: Redondea `number` al número de `digits` decimales especificados. Si `digits` se omite, redondea al entero más cercano.
+
+## for
+
+En Python, un `for` es una estructura de control que se utiliza para iterar sobre una secuencia (como una lista, una tupla, un diccionario, un conjunto o una cadena) y ejecutar un bloque de código para cada elemento de la secuencia.
+
+La sintaxis básica de un bucle `for` en Python es la siguiente:
+
+```python
+for elemento in secuencia:
+    # Bloque de código a ejecutar para cada elemento
+```
+
+Aquí, `elemento` es una variable que toma el valor de cada elemento de la `secuencia` en cada iteración del bucle. El `# Bloque de código a ejecutar para cada elemento` es el código que se ejecutará para cada elemento de la secuencia.
+
+Por ejemplo, si quieres imprimir cada número en una lista de números, puedes usar un bucle `for` de la siguiente manera:
+
+```python
+numeros = [1, 2, 3, 4, 5]
+for numero in numeros:
+    print(numero)
+```
+
+Este bucle `for` recorrerá la lista `numeros` e imprimirá cada `numero` en la lista.
+
+También puedes usar la función `range()` para generar una secuencia de números y luego iterar sobre ellos con un bucle `for`. Por ejemplo, para imprimir los números del 0 al 4, puedes hacer lo siguiente:
+
+```python
+for i in range(5):
+    print(i)
+```
+
+En este caso, `range(5)` genera una secuencia de números del 0 al 4, y el bucle `for` itera sobre esta secuencia, asignando cada número a la variable `i` e imprimiéndolo.
