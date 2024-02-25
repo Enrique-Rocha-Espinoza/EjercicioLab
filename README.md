@@ -163,3 +163,31 @@ else:
 ```
 
 En este caso, si el `numero` es mayor que 0, se imprimirá "El número es positivo". Si el `numero` es menor que 0, se imprimirá "El número es negativo". Si el `numero` es igual a 0, se imprimirá "El número es cero".
+
+
+## While
+
+En Python, un `while` es una estructura de control que permite ejecutar repetidamente un bloque de código mientras se cumpla una condición específica. La ejecución del bucle continuará hasta que la condición se evalúe como falsa (`False`).
+
+La sintaxis básica de un bucle `while` en Python es la siguiente:
+
+```python
+while condicion:
+    # Bloque de código a ejecutar mientras la condición sea verdadera
+```
+
+Aquí, `condicion` es una expresión que se evalúa en cada iteración del bucle. Si la `condicion` es verdadera (`True`), el `# Bloque de código a ejecutar mientras la condición sea verdadera` se ejecutará. Luego, la condición se vuelve a evaluar, y si sigue siendo verdadera, el bloque de código se ejecutará nuevamente. Este proceso se repite hasta que la condición se evalúe como falsa.
+
+Es importante tener cuidado al usar bucles `while`, ya que si la condición siempre se evalúa como verdadera, el bucle se ejecutará infinitamente, lo que puede hacer que el programa se bloquee o se comporte de manera inesperada.
+
+Aquí hay un ejemplo simple de un bucle `while` que imprime los números del 1 al 5:
+
+```python
+contador = 1
+
+while contador <= 5:
+    print(contador)
+    contador += 1
+```
+
+En este ejemplo, la variable `contador` se inicializa en 1. Mientras `contador` sea menor o igual a 5, el bucle `while` imprimirá el valor de `contador` y luego incrementará `contador` en 1. Cuando `contador` sea mayor que 5, la condición `contador <= 5` se evaluará como falsa, y el bucle terminará.
