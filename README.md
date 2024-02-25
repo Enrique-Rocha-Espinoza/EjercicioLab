@@ -51,7 +51,29 @@ potencia = 2 ** 3  # 8
 ```
 ## Listas
 
-La siguiente es una descripción de operaciones básicas con listas en Python:
+Una lista en Python es una estructura de datos que permite almacenar una colección de elementos,  los elementos de una lista pueden ser de cualquier tipo, como números, cadenas de texto, o incluso otras listas, las listas son ordenadas, lo que significa que los elementos mantienen el orden en el que se añaden, y son mutables, lo que significa que se pueden modificar después de su creación.
+
+La sintaxis para crear una lista en Python es usar corchetes `[]` y separar los elementos con comas. Por ejemplo:
+
+```python
+mi_lista = [1, 2, 3, 4, 5]
+```
+
+En este caso, `mi_lista` es una lista de cinco números enteros.
+
+También puedes crear una lista vacía simplemente usando corchetes sin ningún elemento dentro:
+
+```python
+lista_vacia = []
+```
+
+Las listas en Python admiten una variedad de operaciones, como agregar elementos, eliminar elementos, acceder a elementos específicos, etc. Por ejemplo, para agregar un elemento al final de la lista, puedes usar el método `append()`:
+
+```python
+mi_lista.append(6)
+```
+
+Ahora, `mi_lista` sería `[1, 2, 3, 4, 5, 6]`.
 
 - `lista[i]`: Accede al elemento de la lista que se encuentra en la posición `i`.
 - `lista.pop(i)`: Elimina y devuelve el elemento en la posición `i` de la lista. Si no se especifica `i`, remueve el último elemento.
