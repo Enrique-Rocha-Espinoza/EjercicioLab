@@ -27,3 +27,25 @@ valor_falso = False
 ```python
 numero_complejo = 3 + 4j
 ```
+
+## Operadores Aritméticos
+
+- `+` : Suma
+- `-` : Resta
+- `*` : Multiplicación
+- `/` : División
+- `//` : División entera
+- `%` : Módulo (resto de la división)
+- `**` : Potencia
+
+Ejemplos:
+
+```python
+suma = 5 + 3       # 8
+resta = 10 - 2     # 8
+multiplicacion = 4 * 2  # 8
+division = 16 / 2  # 8.0
+division_entera = 17 // 2  # 8
+modulo = 18 % 10   # 8
+potencia = 2 ** 3  # 8
+```
