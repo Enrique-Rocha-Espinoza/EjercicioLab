@@ -6,10 +6,24 @@ Python es un lenguaje de programación de alto nivel, interpretado y de propósi
 
 En Python, las variables pueden contener diferentes tipos de datos. Algunos de los tipos de variables más comunes incluyen:
 
-- **Enteros (int):** Son números enteros, ya sea positivos, negativos o cero, sin decimales. Ejemplo: 42, -7, 0.
+- **Enteros (int):** Son números enteros, ya sea positivos, negativos o cero, sin decimales, ejemplo: 42, -7, 0.
 ```python
 numero_entero = 10
 ```
-- **Flotantes (float):** Números decimales, como 3.14 o -0.001.
-- **Cadenas (str):** Secuencias de caracteres, como "hola" o "Python".
-- **Booleanos (bool):** Valores verdaderos o falsos, True o False.
+- **Float (flotantes):** Son números reales con decimales, positivos o negativos, ejemplo: 3.14, -0.001, 2.0.
+ ```python
+numero_flotante = 3.14
+```
+- **Str (cadenas de texto): ** Son valores lógicos que pueden ser True (verdadero) o False (falso), ejemplo: True, False.
+```python
+texto = "Hola, mundo"
+```
+- **bool (booleanos)::** Son valores lógicos que pueden ser True (verdadero) o False (falso), ejemplo: True, False.
+```python
+valor_verdadero = True
+valor_falso = False
+```
+- **complex (números complejos): ** Son números que tienen una parte real y una parte imaginaria, representados como a + bj, donde a es la parte real y b es la parte imaginaria, ejemplo: 3 + 4j, -2 - 5j.
+```python
+numero_complejo = 3 + 4j
+```
