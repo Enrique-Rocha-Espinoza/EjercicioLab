@@ -14,16 +14,16 @@ numero_entero = 10
  ```python
 numero_flotante = 3.14
 ```
-- **Str (cadenas de texto): ** Son valores lógicos que pueden ser True (verdadero) o False (falso), ejemplo: True, False.
+- **Str (cadenas de texto):** Son valores lógicos que pueden ser True (verdadero) o False (falso), ejemplo: True, False.
 ```python
 texto = "Hola, mundo"
 ```
-- **bool (booleanos)::** Son valores lógicos que pueden ser True (verdadero) o False (falso), ejemplo: True, False.
+- **bool (booleanos):** Son valores lógicos que pueden ser True (verdadero) o False (falso), ejemplo: True, False.
 ```python
 valor_verdadero = True
 valor_falso = False
 ```
-- **complex (números complejos): ** Son números que tienen una parte real y una parte imaginaria, representados como a + bj, donde a es la parte real y b es la parte imaginaria, ejemplo: 3 + 4j, -2 - 5j.
+- **complex (números complejos):** Son números que tienen una parte real y una parte imaginaria, representados como a + bj, donde a es la parte real y b es la parte imaginaria, ejemplo: 3 + 4j, -2 - 5j.
 ```python
 numero_complejo = 3 + 4j
 ```
