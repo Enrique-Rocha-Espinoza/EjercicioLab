@@ -114,3 +114,52 @@ for i in range(5):
 ```
 
 En este caso, `range(5)` genera una secuencia de números del 0 al 4, y el bucle `for` itera sobre esta secuencia, asignando cada número a la variable `i` e imprimiéndolo.
+
+
+## If
+
+En Python, un `if` es una estructura de control que se utiliza para tomar decisiones en el código. Permite ejecutar un bloque de código si se cumple una condición específica y, opcionalmente, ejecutar otro bloque de código si la condición no se cumple.
+
+La sintaxis básica de una instrucción `if` en Python es la siguiente:
+
+```python
+if condicion:
+    # Bloque de código a ejecutar si la condición es verdadera
+```
+
+Aquí, `condicion` es una expresión que se evalúa como verdadera (`True`) o falsa (`False`). Si la `condicion` es verdadera, se ejecutará el `# Bloque de código a ejecutar si la condición es verdadera`.
+
+También puedes incluir una cláusula `else` para ejecutar un bloque de código si la condición no se cumple:
+
+```python
+if condicion:
+    # Bloque de código a ejecutar si la condición es verdadera
+else:
+    # Bloque de código a ejecutar si la condición es falsa
+```
+
+Además, puedes encadenar múltiples condiciones usando la cláusula `elif` (que es una abreviatura de "else if"):
+
+```python
+if condicion1:
+    # Bloque de código a ejecutar si la condicion1 es verdadera
+elif condicion2:
+    # Bloque de código a ejecutar si la condicion2 es verdadera
+else:
+    # Bloque de código a ejecutar si ninguna de las condiciones anteriores es verdadera
+```
+
+Por ejemplo, si quieres verificar si un número es positivo, negativo o cero, puedes usar una estructura `if`-`elif`-`else` de la siguiente manera:
+
+```python
+numero = 5
+
+if numero > 0:
+    print("El número es positivo.")
+elif numero < 0:
+    print("El número es negativo.")
+else:
+    print("El número es cero.")
+```
+
+En este caso, si el `numero` es mayor que 0, se imprimirá "El número es positivo". Si el `numero` es menor que 0, se imprimirá "El número es negativo". Si el `numero` es igual a 0, se imprimirá "El número es cero".
