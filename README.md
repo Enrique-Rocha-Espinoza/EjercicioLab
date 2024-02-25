@@ -49,3 +49,14 @@ division_entera = 17 // 2  # 8
 modulo = 18 % 10   # 8
 potencia = 2 ** 3  # 8
 ```
+## Listas
+
+La siguiente es una descripción de operaciones básicas con listas en Python:
+
+- `lista[i]`: Accede al elemento de la lista que se encuentra en la posición `i`.
+- `lista.pop(i)`: Elimina y devuelve el elemento en la posición `i` de la lista. Si no se especifica `i`, remueve el último elemento.
+- `lista.append(elemento)`: Añade `elemento` al final de la lista.
+- `lista.insert(i, elemento)`: Inserta `elemento` en la posición `i`, desplazando los demás elementos a la derecha.
+- `lista.extend(lista2)`: Añade los elementos de `lista2` al final de `lista`.
+- `lista.remove(elemento)`: Elimina la primera ocurrencia de `elemento` en la lista.
+- `round(number, digits)`: Redondea `number` al número de `digits` decimales especificados. Si `digits` se omite, redondea al entero más cercano.
