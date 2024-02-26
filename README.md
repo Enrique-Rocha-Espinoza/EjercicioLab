@@ -386,6 +386,9 @@ Deberá imprimir también la ruta que siguió.
 Mostrar un segundo mapa con el “camino” seguido por el robot mediante flechas
 
 Primero se genera la matriz con este codigo:
+
+## Función `generarmatriz`
+
 ```python
 def generarmatriz():
     n_filas, n_columnas = 5, 5  # Dimensiones de la cuadrícula
@@ -418,7 +421,7 @@ def generarmatriz():
         print(' '.join(fila))
     return cuadricula
 ```
-## Función `generarmatriz`
+
 
 La función `generarmatriz` se encarga de generar una cuadrícula de 5x5 que representa un laberinto, con un punto de inicio, un punto final y obstáculos aleatorios.
 
@@ -500,10 +503,77 @@ La función `generarmatriz` se encarga de generar una cuadrícula de 5x5 que rep
 
   ```
 
+Como primer paso se deben de saber las dimenciones de la matriz por lo que a la cuadricula la cual es el laberinto se le saca sus medidad con `len` y asi ptenemos las filas y columnas de la matriz.
+ ```python
+  def Buscar_camino(cuadricula):
+    # Determinar el número de filas y columnas de la cuadrícula
+    n_filas, n_columnas = len(cuadricula), len(cuadricula[0])
+ ```
 
+El codigo de la parte de abajo establece las coordenadas de inicio (esquina superior izquierda) y fin (esquina inferior derecha) de la cuadrícula.
+ ```python
+    # Establecer la posición inicial en la esquina superior izquierda y la final en la inferior derecha
+    inicio = (0, 0)
+    fin = (n_filas - 1, n_columnas - 1)
+  ```
 
+Define las direcciones de movimiento en el orden: abajo, derecha, izquierda. Cada dirección se representa como una tupla (desplazamiento en filas, desplazamiento en columnas), ademas inicializa la posición actual en el punto de inicio y crea una lista camino para almacenar las coordenadas del camino encontrado.
+ ```python
+  
+    
+    # Direcciones de movimiento permitidas: abajo, derecha, izquierda
+    direcciones = [(1, 0), (0, 1), (0, -1)]
+    
+    # Inicializar la posición actual en el inicio y el camino con la posición inicial
+    posicion_actual = inicio
+    camino = [inicio]
 
+  ```
 
+Inicia un bucle que se ejecuta mientras la posición actual no sea igual a la posición final.
+
+```python
+
+   while posicion_actual != fin:
+
+  ```
+
+Itera sobre las direcciones de movimiento definidas.
+```python
+for direccion in direcciones:
+  ```
+
+Calcula la nueva posición basada en la dirección de movimiento actual.
+```python
+nueva_posicion = (posicion_actual[0] + direccion[0], posicion_actual[1] + direccion[1])
+
+  ```
+
+Verifica si la nueva posición es válida (dentro de los límites de la cuadrícula y no es un obstáculo).
+```python
+if 0 <= nueva_posicion[0] < n_filas and 0 <= nueva_posicion[1] < n_columnas and cuadricula[nueva_posicion[0]][nueva_posicion[1]] != 'X':
+  ```
+
+Si la nueva posición es válida, actualiza la posición actual y añade la nueva posición al camino. Luego, sale del bucle for para continuar con la siguiente iteración del bucle while.
+```python
+ posicion_actual = nueva_posicion
+ camino.append(nueva_posicion)
+  break
+
+```
+
+Si no se pudo mover en ninguna de las direcciones, devuelve el mensaje "Imposible llegar al destino".
+```python
+else:
+  # Si no se pudo mover en ninguna dirección, se considera que no hay camino
+ return "Imposible llegar al destino"
+```
+
+Si se alcanza la posición final, devuelve la lista de coordenadas que forman el camino desde el inicio hasta el fin.
+
+```python
+    return camino
+```
 
   ## Función `imprimir_cuadricula_con_camino`
   ```python
@@ -532,4 +602,23 @@ La función `generarmatriz` se encarga de generar una cuadrícula de 5x5 que rep
 
 
   ```
+- `def imprimir_cuadricula_con_camino(cuadricula, camino):`: Esta línea define una función llamada `imprimir_cuadricula_con_camino` que toma dos argumentos: `cuadricula` (una lista de listas que representa la cuadrícula) y `camino` (una lista de coordenadas que representan el camino a seguir en la cuadrícula).
+
+- `cuadricula_con_camino = [fila[:] for fila in cuadricula]`: Aquí se crea una copia de la cuadrícula original para no modificarla directamente. Se utiliza una comprensión de listas para copiar cada fila de la cuadrícula original.
+
+- `direcciones = {...}`: Se define un diccionario llamado `direcciones` que mapea direcciones (tuplas de dos elementos) a sus respectivas flechas (cadenas de texto).
+
+- `for i in range(len(camino) - 1):`: Este bucle recorre el camino dado. Restar 1 a `len(camino)` evita intentar acceder a un índice que estaría fuera del rango cuando se accede a `camino[i + 1]`.
+
+- `posicion_actual = camino[i]`: Se obtiene la posición actual en el camino.
+
+- `posicion_siguiente = camino[i + 1]`: Se obtiene la siguiente posición en el camino.
+
+- `direccion = (posicion_siguiente[0] - posicion_actual[0], posicion_siguiente[1] - posicion_actual[1])`: Se calcula la dirección de la siguiente posición restando las coordenadas de la posición actual a las de la siguiente. Esto da como resultado una tupla que representa la dirección.
+
+- `cuadricula_con_camino[posicion_actual[0]][posicion_actual[1]] = direcciones[direccion]`: Se actualiza la cuadrícula copiada con la dirección correspondiente en la posición actual del camino.
+
+- `for fila in cuadricula_con_camino:`: Este bucle imprime cada fila de la cuadrícula copiada.
+
+- `print(' '.join(fila))`: Cada fila se imprime como una cadena de texto donde los elementos están separados por un espacio.
 
