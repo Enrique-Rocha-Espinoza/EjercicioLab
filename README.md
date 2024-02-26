@@ -385,3 +385,63 @@ Deberá imprimir también la ruta que siguió.
 
 Mostrar un segundo mapa con el “camino” seguido por el robot mediante flechas
 
+Primero se genera la matriz con este codigo:
+```python
+def generarmatriz():
+    n_filas, n_columnas = 5, 5  # Dimensiones de la cuadrícula
+    inicio = (0, 0)  # Posición de inicio (S)
+    fin = (4, 4)  # Posición de fin (E)
+    obstaculo_char = 'X'
+    libre_char = 'o'
+
+    # Crear una cuadrícula con todos los espacios libres
+    cuadricula = [[libre_char for _ in range(n_columnas)] for _ in range(n_filas)]
+    #colocar el inicio
+    cuadricula[inicio[0]][inicio[1]] = 'S'
+    #colocar el final
+    cuadricula[fin[0]][fin[1]] = 'E'
+
+    # Generar posiciones aleatorias para los obstáculos
+    obstaculos = set()
+    while len(obstaculos) < n_filas:  # Limitar el número de obstáculos
+        obstaculo = (random.randint(0, n_filas - 1), random.randint(0, n_columnas - 1))
+        if obstaculo != inicio and obstaculo != fin:
+            obstaculos.add(obstaculo)
+
+    # Colocar los obstáculos en la cuadrícula
+    for obstaculo in obstaculos:
+        r, c = obstaculo
+        cuadricula[r][c] = obstaculo_char
+
+    # Imprimir la cuadrícula
+    for fila in cuadricula:
+        print(' '.join(fila))
+    return cuadricula
+```
+## Función `generarmatriz`
+
+La función `generarmatriz` se encarga de generar una cuadrícula de 5x5 que representa un laberinto, con un punto de inicio, un punto final y obstáculos aleatorios.
+
+- **Inicialización de Variables:**
+  - `n_filas, n_columnas = 5, 5`: Define las dimensiones de la cuadrícula.
+  - `inicio = (0, 0)`: Establece la posición de inicio en la esquina superior izquierda.
+  - `fin = (4, 4)`: Establece la posición de fin en la esquina inferior derecha.
+  - `obstaculo_char = 'X'`: Define el carácter que representa un obstáculo.
+  - `libre_char = 'o'`: Define el carácter que representa un espacio libre.
+
+- **Creación de la Cuadrícula:**
+  - Se crea una cuadrícula de 5x5 con todos los espacios inicialmente libres (`libre_char`).
+
+- **Posición de Inicio y Fin:**
+  - Se coloca el carácter 'S' en la posición de inicio y el carácter 'E' en la posición de fin.
+
+- **Generación de Obstáculos:**
+  - Se generan posiciones aleatorias para los obstáculos, asegurándose de que no coincidan con las posiciones de inicio o fin.
+  - Se limita el número de obstáculos a la cantidad de filas de la cuadrícula.
+  - Se añaden los obstáculos a la cuadrícula, reemplazando los espacios libres por el carácter de obstáculo (`obstaculo_char`).
+
+- **Impresión de la Cuadrícula:**
+  - Se imprime la cuadrícula resultante, mostrando el laberinto a resolver.
+
+- **Retorno de la Cuadrícula:**
+  - La función devuelve la cuadrícula generada para su uso posterior en la búsqueda del camino.
