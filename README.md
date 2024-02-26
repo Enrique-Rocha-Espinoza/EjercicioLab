@@ -368,7 +368,7 @@ while True:
    - Si el `numero_usuario` es mayor que el `numero_secreto`, el código informa al usuario que el número es demasiado alto y le pide que intente de nuevo.
 
 
-## Problema 6
+# Problema 6
 Robot exploradorEl programa debe generar una matriz de al menos 5x5.El robot inicia su camino en la posición (0,0) de la matriz y debe salir en la posición (4,4) o lamáxima posición si se cambia el tamaño de matriz.El numero y la posición de los obstáculos es aleatoria.El robot solo puede avanzar, girar a la izquierda o a la derecha para buscar un camino libre, en eleventual caso que el robot no pueda salir debe imprimir en pantalla “Imposible llegar al destino”En caso de que el robot llegue a su destino final deberá imprimir el mapa, con los espacios libres yobstáculos de la siguiente forma X obstáculo o libreo 
 
 o o X o o
@@ -435,10 +435,21 @@ La función `generarmatriz` se encarga de generar una cuadrícula de 5x5 que rep
 - **Posición de Inicio y Fin:**
   - Se coloca el carácter 'S' en la posición de inicio y el carácter 'E' en la posición de fin.
 
-- **Generación de Obstáculos:**
-  - Se generan posiciones aleatorias para los obstáculos, asegurándose de que no coincidan con las posiciones de inicio o fin.
-  - Se limita el número de obstáculos a la cantidad de filas de la cuadrícula.
-  - Se añaden los obstáculos a la cuadrícula, reemplazando los espacios libres por el carácter de obstáculo (`obstaculo_char`).
+
+  ## Generación de Obstáculos en la Cuadrícula
+
+- **Inicialización del Conjunto de Obstáculos:**
+  - Se inicializa un conjunto vacío llamado `obstaculos` para almacenar las posiciones de los obstáculos en la cuadrícula. Se utiliza un conjunto para asegurar que no haya posiciones duplicadas de obstáculos.
+
+- **Bucle para Generar Obstáculos:**
+  - Se inicia un bucle `while` que se ejecutará hasta que el número de obstáculos en el conjunto sea igual al número de filas de la cuadrícula (`n_filas`). Esto limita la cantidad de obstáculos para evitar que la cuadrícula esté demasiado llena y sea imposible encontrar un camino.
+
+- **Generación de Posiciones Aleatorias para Obstáculos:**
+  - Dentro del bucle, se genera una posición aleatoria para un obstáculo utilizando `random.randint(0, n_filas - 1)` para la fila y `random.randint(0, n_columnas - 1)` para la columna. Esto asegura que la posición del obstáculo esté dentro de los límites de la cuadrícula.
+
+- **Verificación y Adición de Obstáculos:**
+  - Se verifica si la posición generada aleatoriamente no coincide con las posiciones de inicio (`inicio`) y fin (`fin`) de la cuadrícula. Si la posición es válida (no es ni el inicio ni el fin), se añade al conjunto de `obstaculos`.
+
 
 - **Impresión de la Cuadrícula:**
   - Se imprime la cuadrícula resultante, mostrando el laberinto a resolver.
