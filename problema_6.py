@@ -1,5 +1,4 @@
 import random
-from collections import deque
 
 def generarmatriz():
     n_filas, n_columnas = 5, 5  # Dimensiones de la cuadrícula
