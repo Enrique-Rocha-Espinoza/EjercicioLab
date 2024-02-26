@@ -200,10 +200,12 @@ suma = (n(n + 1))/2
 
 El código para resolver este problema es el siguiente:
 ```python
+# se le piden al usuario que inserte el numero para hacer la sumatoria
 n= int(input("inserte el numero"))
 
-
+# se declara la ecuacion
 a= (n(n+1))/2
+# se imprime el resultado
 print(f"\n la suma es: {a}")
 ```
 Este consiste en que en la primera línea le pedimos al usuario ingresar un número para que se haga la suma, este al ser recibido por un input, se debe de transformar a un entero (int) y este valor se le asigna a n, después, colocamos la fórmula dada en el problema y el resultado de esta se asocia a una variable a, por último, solo se imprime esta variable a para mostrar el resultado.
@@ -216,8 +218,9 @@ Escribir un programa que pregunte al usuario por el número de horas trabajadas 
 El código para resolver este problema es el siguiente:
 
 ```python
+# se piden al usuario los datos de las horas trabajadas y cuanto se le paga por hora
 a, b= map(int,input("inserte las horas y el costo: ").split())
-
+# se imprime el pago multiplicando las horas por el pago por hora
 print(f"pago : {a*b}")
 ```
 En la primera línea le pedimos al usuario que ingrese las horas trabajadas y el costo por hora, después, mapeamos estos dos valores enteros a las variables a y b, por último, para mostrar la paga que le corresponde, imprimimos la multiplicación de a * b para obtener el valor deseado.
@@ -230,6 +233,7 @@ El código para resolver este problema es el siguiente:
 
 
 ```python
+# se piden los datos del empleado, nombre, ganacia por hora, horas trabajadas
 def captura():
     a=str(input("inserte el nombre del trabajador: "))
     c=int(input(f"cuanto gana por hora {a}: "))
@@ -241,22 +245,26 @@ def captura():
 
 
 if __name__ == "__main__":
+    # se le pide al usuario que ingrese cuantos trabajadores son
     trabajadores=int(input("Cuantos trabajadores son: "))
     i= 0
     lista= []
+    # se crea un ciclo while para llamar la funcion capturar las veces que sean nesesarias
     while(i<trabajadores):
         
         a,b,c= captura()
+        # se hace el calculo del pago
         c = c*b
-
+        # se colocan los valores dentro de la lista
         lista.append(a)
         lista.append(b)
         lista.append(c)
         i+=1
 
-
+    
     print("\nNombre del trabajador\tSueldo")
     print("-" * 80)
+    # se imprime la lista cada 3 elemntos
     for i in range(0, len(lista), 3):
         print(f"{lista[i]:20}\t{lista[i + 2]:<10}")
 ```
@@ -274,24 +282,106 @@ Crea una lista llamada numeros que contenga al menos 10 números, Calcula el pro
 El código para resolver este problema es el siguiente:
 
 ```python
+# Lista de números enteros
 Lista = [2, 4, 5, 8, 4, 3, 1, 19, 23, 29]
 
-numeros_pares = [num for num in Lista if num % 2 == 0]
-promedio_pares = sum(numeros_pares) / len(numeros_pares) if numeros_pares else 0
+# Crear una lista de números pares y calcular su promedio
+numeros_pares = [num for num in Lista if num % 2 == 0]  # Lista de números pares
+promedio_pares = sum(numeros_pares) / len(numeros_pares) if numeros_pares else 0  # Promedio de números pares
 
-numeros_impares = [num for num in Lista if num % 2 != 0]
-producto_impares = 1
-for num in numeros_impares:
+# Crear una lista de números impares y calcular su producto
+numeros_impares = [num for num in Lista if num % 2 != 0]  # Lista de números impares
+producto_impares = 1  # Inicializar el producto de números impares
+for num in numeros_impares:  # Calcular el producto de los números impares
     producto_impares *= num
 
-# Imprimiendo los resultados
+# Imprimir los resultados
 print(f"Promedio de los números pares: {promedio_pares}")
 print(f"Producto de los números impares: {producto_impares}")
+
 ```
+
+
+- **Inicialización de la Lista:** Se crea una lista de números enteros llamada `Lista`.
+
+- **Cálculo del Promedio de Números Pares:**
+  - Se utiliza una comprensión de lista para filtrar los números pares de `Lista` y almacenarlos en `numeros_pares`, esta es que dividimos el nuemro entre 2 y si su residuo es igual a 0 significa que es un numero par.
+  - Se calcula el promedio de los números pares sumándolos y dividiendo por la cantidad de números pares. Si la lista de números pares está vacía, el promedio se establece en 0 para evitar la división por cero.
+
+- **Cálculo del Producto de Números Impares:**
+  - Se utiliza otra comprensión de lista para filtrar los números impares de `Lista` y almacenarlos en `numeros_impares`, esto se logró dividiendo entre 2 y viendo que el residuo fuera diferente de 0.
+  - Se inicializa una variable `producto_impares` en 1 y luego se multiplica por cada número impar en `numeros_impares` para obtener el producto total de los números impares.
+
+- **Impresión de Resultados:** Se imprimen en consola el promedio de los números pares y el producto de los números impares.
+
 ## Problema 5
 
+Crea un programa que solicite al usuario adivinar un número secreto. El programa debe generarun número aleatorio entre 1 y 10, y el usuario debe intentar adivinarlo. El programa debeproporcionar pistas si el número ingresado por el usuario es demasiado alto o bajo. El bucle whiledebe continuar hasta que el usuario adivine correctamente. Al final se debe imprimir en cuantosintentos el usuario logró adivinar el número.
+
+El código para resolver este problema es el siguiente:
+
+```python
+import random
+
+# Generar un número aleatorio entre 1 y 10 y almacenarlo en la variable 'numero_secreto'
+numero_secreto = random.randint(1, 10)
+
+# Inicializar la variable 'intentos' para llevar la cuenta de los intentos del usuario
+intentos = 0
+
+# Iniciar un bucle infinito para permitir al usuario adivinar el número secreto
+while True:
+    # Solicitar al usuario que ingrese un número entre 1 y 10 y convertirlo a entero
+    numero_usuario = int(input("Adivina el número secreto entre 1 y 10: "))
+
+    # Incrementar el contador de intentos en cada iteración del bucle
+    intentos += 1
+
+    # Verificar si el número ingresado por el usuario es igual al número secreto
+    if numero_usuario == numero_secreto:
+        # Si el usuario adivina el número, imprimir un mensaje de felicitación y salir del bucle
+        print(f"¡Felicidades! Adivinaste el número secreto en {intentos} intentos.")
+        break
+    # Verificar si el número ingresado por el usuario es menor que el número secreto
+    elif numero_usuario < numero_secreto:
+        # Si el número es demasiado bajo, informar al usuario e invitarlo a intentar de nuevo
+        print("El número es demasiado bajo. Intenta de nuevo.")
+    # Si el número ingresado no es menor ni igual al número secreto, debe ser mayor
+    else:
+        # Informar al usuario que el número es demasiado alto e invitarlo a intentar de nuevo
+        print("El número es demasiado alto. Intenta de nuevo.")
+
+```
+1. **Generar un número aleatorio entre 1 y 10:** El código utiliza la función `randint` del módulo `random` para generar un número entero aleatorio entre 1 y 10. Este número se almacena en la variable `numero_secreto`.
+
+2. **Inicializar la variable de intentos:** La variable `intentos` se inicializa en 0 para llevar la cuenta de cuántos intentos ha hecho el usuario para adivinar el número.
+
+3. **Bucle infinito:** El código entra en un bucle `while` infinito (`while True:`) para permitir al usuario seguir adivinando hasta que acierte el número.
+
+4. **Solicitar al usuario que adivine el número:** Dentro del bucle, el código pide al usuario que ingrese un número entre 1 y 10. El número ingresado se convierte a entero y se almacena en la variable `numero_usuario`.
+
+5. **Incrementar la variable de intentos:** Cada vez que el usuario hace un intento, la variable `intentos` se incrementa en 1.
+
+6. **Verificar la adivinanza del usuario:**
+   - Si el `numero_usuario` es igual al `numero_secreto`, el usuario ha adivinado correctamente. El código imprime un mensaje de felicitación junto con el número de intentos que tomó, y luego sale del bucle con `break`.
+   - Si el `numero_usuario` es menor que el `numero_secreto`, el código informa al usuario que el número es demasiado bajo y le pide que intente de nuevo.
+   - Si el `numero_usuario` es mayor que el `numero_secreto`, el código informa al usuario que el número es demasiado alto y le pide que intente de nuevo.
 
 
 ## Problema 6
+Robot exploradorEl programa debe generar una matriz de al menos 5x5.El robot inicia su camino en la posición (0,0) de la matriz y debe salir en la posición (4,4) o lamáxima posición si se cambia el tamaño de matriz.El numero y la posición de los obstáculos es aleatoria.El robot solo puede avanzar, girar a la izquierda o a la derecha para buscar un camino libre, en eleventual caso que el robot no pueda salir debe imprimir en pantalla “Imposible llegar al destino”En caso de que el robot llegue a su destino final deberá imprimir el mapa, con los espacios libres yobstáculos de la siguiente forma X obstáculo o libreo 
 
+o o X o o
+
+o o o o o
+
+o o o o X
+
+o o o o o
+
+o X X X o
+
+Deberá imprimir también la ruta que siguió.
+
+Mostrar un segundo mapa con el “camino” seguido por el robot mediante flechas
 
