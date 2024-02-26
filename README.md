@@ -198,7 +198,7 @@ Escribir un programa que lea un entero positivo “n” introducido por el usuar
 
 suma = (n(n + 1))/2
 
-El codigo para resolver este problema es el siguiente:
+El código para resolver este problema es el siguiente:
 ```python
 n= int(input("inserte el numero"))
 
@@ -206,27 +206,27 @@ n= int(input("inserte el numero"))
 a= (n(n+1))/2
 print(f"\n la suma es: {a}")
 ```
-Este consiste en que en la primera linea le pedimos al usuario ingresar un numero para que se haga la suma, este al ser resiviudo por un iunput se debe de trasformar a un netero int, y este valor se le asigna a n, despues colocamos la formula administrada en el problema y el resultado de esta que sea asiciada a una variable a, por ultimo solo se imprime esta varoiable a para mostrar el resultado.
+Este consiste en que en la primera línea le pedimos al usuario ingresar un número para que se haga la suma, este al ser recibido por un input, se debe de transformar a un entero (int) y este valor se le asigna a n, después, colocamos la fórmula dada en el problema y el resultado de esta se asocia a una variable a, por último, solo se imprime esta variable a para mostrar el resultado.
 
 
 ## problema 2
 
 Escribir un programa que pregunte al usuario por el número de horas trabajadas y el costo por hora, Después debe mostrar por pantalla la paga que le corresponde.
 
-El codigo que resulve este problema es el siguyiente:
+El código para resolver este problema es el siguiente:
 
 ```python
 a, b= map(int,input("inserte las horas y el costo: ").split())
 
 print(f"pago : {a*b}")
 ```
-En la primera linea le pedimos al usuario que ingrese las horas trabajadas y el costo por hora, despues mapeamos estos 2 valores enteros a las variables a y b, por ultimo para mostrar la paga que le coprresponde imnporimimos la multiplicacion de a*b para opbtener el pago correspondiente.
+En la primera línea le pedimos al usuario que ingrese las horas trabajadas y el costo por hora, después, mapeamos estos dos valores enteros a las variables a y b, por último, para mostrar la paga que le corresponde, imprimimos la multiplicación de a * b para obtener el valor deseado.
 
 ## problema 3
 
 Crea una lista de nombre + sueldo por hora + horas trabajadas de al menos seis operadores.Imprime el nombre y el sueldo a pagar de cada operador.
 
-El codigo que resulve este problema es el siguiente:
+El código para resolver este problema es el siguiente:
 
 
 ```python
@@ -261,7 +261,9 @@ if __name__ == "__main__":
         print(f"{lista[i]:20}\t{lista[i + 2]:<10}")
 ```
 
-En la fucion ` capturar()` se capturan los dataos que se van a utilizar para poder trabajar con ellos, en primer lugar se pide el nombre del trabajador, despues cuento gana este por hora y por ultimo cuyantas horas trabajo, estos valores se asignan a las variables a, b y c.
+En la función `capturar()` se capturan los datos que se van a utilizar para poder trabajar con ellos, en primer lugar, se pide el nombre del trabajador, después cuánto gana este por hora y, por último, cuántas horas trabajó. Estos valores se asignan a las variables a, b y c.
 
-En la funcion main primero le preguntamos al usuario cuantos trabajadoreres va a ingresar, despues creamos nuestra lista vacia la cual vamos a ir rellenando con los valores a,b y c, en el while se coloco como condiucion que se repoitiera las veces que fueran nesesariuas hasta que alcanze el numero de trabajadores ingresados, detro de este se llama a la funcion ` capturar()` y despues de obtener los valores modificaremos el valor de c para que este sea ahora c*b para que obtengamos cuanto se le debe pagar a cada trabajador.
+En la función main, primero le preguntamos al usuario cuántos trabajadores va a ingresar, después, creamos nuestra lista vacía, la cual vamos a ir rellenando con los valores `a  b  c`, en el while, se colocó como condición que se repitiera las veces que fueran necesarias hasta que alcance el número de trabajadores ingresados, dentro de este, se llama a la función capturar() y después de obtener los valores, modificaremos el valor de c para que este sea ahora `c * b`, para que obtengamos cuánto se le debe pagar a cada trabajador.
+
+Estos valores de a, b, c se irán metiendo a la lista, para que después tengamos una lista con todos los datos recopilados por el while, por último, imprimimos los valores de esa lista, se usó un for para iterar cada 3 espacios, ya que después de 3 elementos de la lista empieza un nuevo trabajador, solo queremos imprimir el nombre y el valor de c que es la paga que se le debe dar al trabajador, por lo que se imprime la posición `i` de la lista y la posición `i + 2`, la cual contiene c.
 
