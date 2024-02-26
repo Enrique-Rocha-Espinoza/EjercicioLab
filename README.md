@@ -267,3 +267,31 @@ En la función main, primero le preguntamos al usuario cuántos trabajadores va 
 
 Estos valores de a, b, c se irán metiendo a la lista, para que después tengamos una lista con todos los datos recopilados por el while, por último, imprimimos los valores de esa lista, se usó un for para iterar cada 3 espacios, ya que después de 3 elementos de la lista empieza un nuevo trabajador, solo queremos imprimir el nombre y el valor de c que es la paga que se le debe dar al trabajador, por lo que se imprime la posición `i` de la lista y la posición `i + 2`, la cual contiene c.
 
+## Problema 4
+
+Crea una lista llamada numeros que contenga al menos 10 números, Calcula el promedio de los números pares y el producto de los números impares, Imprime los resultados.
+
+El código para resolver este problema es el siguiente:
+
+```python
+Lista = [2, 4, 5, 8, 4, 3, 1, 19, 23, 29]
+
+numeros_pares = [num for num in Lista if num % 2 == 0]
+promedio_pares = sum(numeros_pares) / len(numeros_pares) if numeros_pares else 0
+
+numeros_impares = [num for num in Lista if num % 2 != 0]
+producto_impares = 1
+for num in numeros_impares:
+    producto_impares *= num
+
+# Imprimiendo los resultados
+print(f"Promedio de los números pares: {promedio_pares}")
+print(f"Producto de los números impares: {producto_impares}")
+```
+## Problema 5
+
+
+
+## Problema 6
+
+
